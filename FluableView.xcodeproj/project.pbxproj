@@ -10,6 +10,7 @@
 		F50B9B821C876B2D004D0EF9 /* FluableView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50B9B811C876B2D004D0EF9 /* FluableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F50B9B891C876B2E004D0EF9 /* FluableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50B9B7E1C876B2D004D0EF9 /* FluableView.framework */; };
 		F50B9B8E1C876B2E004D0EF9 /* FluableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9B8D1C876B2E004D0EF9 /* FluableViewTests.swift */; };
+		F50B9B9C1C876E78004D0EF9 /* DataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		F50B9B881C876B2E004D0EF9 /* FluableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50B9B8D1C876B2E004D0EF9 /* FluableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluableViewTests.swift; sourceTree = "<group>"; };
 		F50B9B8F1C876B2E004D0EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		F50B9B801C876B2D004D0EF9 /* FluableView */ = {
 			isa = PBXGroup;
 			children = (
+				F50B9B9A1C876E78004D0EF9 /* Sources */,
 				F50B9B811C876B2D004D0EF9 /* FluableView.h */,
 				F50B9B831C876B2E004D0EF9 /* Info.plist */,
 			);
@@ -84,6 +87,14 @@
 				F50B9B8F1C876B2E004D0EF9 /* Info.plist */,
 			);
 			path = FluableViewTests;
+			sourceTree = "<group>";
+		};
+		F50B9B9A1C876E78004D0EF9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50B9B9C1C876E78004D0EF9 /* DataLoadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +320,7 @@
 		F50B9B931C876B2E004D0EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +331,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaseltior.FluableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		F50B9B941C876B2E004D0EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
