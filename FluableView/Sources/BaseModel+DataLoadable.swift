@@ -37,7 +37,7 @@ extension BaseModel: DataLoadable {
    - returns: `true` if the model is loading, whatever is loading method is, otherwise returns `false`.
    */
   public func isLoading() -> Bool {
-    return false
+    return self.stateFlags.isLoading
   }
   
   /**
@@ -45,7 +45,7 @@ extension BaseModel: DataLoadable {
    - returns: `true` if the model is loading, whatever is loading method is, otherwise returns `false`.
    */
   public func isLoaded() -> Bool {
-    return true
+    return self.stateFlags.isLoaded
   }
   
   /**
@@ -72,8 +72,14 @@ extension BaseModel: DataLoadable {
   /**
    If this is applicable, considering that the loading is asynchronous, will try
    to cancel the request.
+   
+   - parameter closure: A completion block that offers the user a way to do something
+   after the loading is canceled. This makes sense if the cancel operation is asynchronous
    */
-  public func cancelLoading() {
+  public func cancelLoading(closure: FVVoidClosure? = nil) {
+    self.stateFlags.isLoading = false
+    self.stateFlags.isLoaded = false
+    self.stateFlags.hasContent = false
   }
   
   /**

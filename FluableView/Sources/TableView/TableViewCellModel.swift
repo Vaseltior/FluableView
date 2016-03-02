@@ -23,41 +23,14 @@
 //
 
 //
-//  FluableView : BaseModel.swift
+//  FluableView : TableViewCellModel.swift
 //
-//  Created by Samuel Grau on 02/03/2016.
+//  Created by Samuel Grau on 03/03/2016.
 //  Copyright © 2016 Samuel GRAU. All rights reserved.
 //
 
 import Foundation
 
-/// A base model implementation
-public class BaseModel: Modelizable {
+public protocol TableViewCellModel {
   
-  /// A set of flags that can maintain information about different states
-  public struct StateFlags {
-    var isLoading: Bool
-    var isLoaded: Bool
-    var hasContent: Bool
-    var hasNoMore: Bool
-    var isCancelled: Bool
-  }
-  
-  // MARK: - Properties -
-  
-  /// The state flags of the base model
-  public var stateFlags: BaseModel.StateFlags = BaseModel.StateFlags(
-    isLoading: false,
-    isLoaded: false,
-    hasContent: false,
-    hasNoMore: false,
-    isCancelled: false
-  )
-  
-  /// Maintains information about the last error occured in the model, if any
-  public private(set) var lastError: FVError? = nil
-  
-  public private(set) var lastUpdate: FVDate? = nil
-  
-  // MARK: - Initialization -
 }

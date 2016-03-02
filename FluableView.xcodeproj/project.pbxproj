@@ -15,6 +15,9 @@
 		F50B9BB91C8792A6004D0EF9 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BB81C8792A6004D0EF9 /* BaseModel.swift */; };
 		F50B9BBB1C879314004D0EF9 /* BaseModel+DataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BBA1C879314004D0EF9 /* BaseModel+DataLoadable.swift */; };
 		F50B9BBD1C879342004D0EF9 /* BaseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BBC1C879342004D0EF9 /* BaseModelTests.swift */; };
+		F50B9BC11C879C11004D0EF9 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BC01C879C11004D0EF9 /* Aliases.swift */; };
+		F50B9BC71C87A831004D0EF9 /* TableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BC61C87A831004D0EF9 /* TableViewCellModel.swift */; };
+		F50B9BC91C87A85E004D0EF9 /* UpdatableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BC81C87A85E004D0EF9 /* UpdatableTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		F50B9BB81C8792A6004D0EF9 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		F50B9BBA1C879314004D0EF9 /* BaseModel+DataLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseModel+DataLoadable.swift"; sourceTree = "<group>"; };
 		F50B9BBC1C879342004D0EF9 /* BaseModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelTests.swift; sourceTree = "<group>"; };
+		F50B9BC01C879C11004D0EF9 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
+		F50B9BC61C87A831004D0EF9 /* TableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellModel.swift; sourceTree = "<group>"; };
+		F50B9BC81C87A85E004D0EF9 /* UpdatableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatableTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +107,39 @@
 		F50B9B9A1C876E78004D0EF9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */,
-				F50B9BB61C8791ED004D0EF9 /* GenericModel.swift */,
+				F50B9BC21C879DF4004D0EF9 /* TableView */,
+				F50B9BC01C879C11004D0EF9 /* Aliases.swift */,
 				F50B9BB81C8792A6004D0EF9 /* BaseModel.swift */,
 				F50B9BBA1C879314004D0EF9 /* BaseModel+DataLoadable.swift */,
+				F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */,
+				F50B9BB61C8791ED004D0EF9 /* GenericModel.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		F50B9BC21C879DF4004D0EF9 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F50B9BC31C879DF4004D0EF9 /* CoreData */,
+				F50B9BC41C879DF4004D0EF9 /* Mutable */,
+				F50B9BC61C87A831004D0EF9 /* TableViewCellModel.swift */,
+				F50B9BC81C87A85E004D0EF9 /* UpdatableTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		F50B9BC31C879DF4004D0EF9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F50B9BC41C879DF4004D0EF9 /* Mutable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mutable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +270,10 @@
 			files = (
 				F50B9BBB1C879314004D0EF9 /* BaseModel+DataLoadable.swift in Sources */,
 				F50B9BB91C8792A6004D0EF9 /* BaseModel.swift in Sources */,
+				F50B9BC91C87A85E004D0EF9 /* UpdatableTableViewCell.swift in Sources */,
+				F50B9BC11C879C11004D0EF9 /* Aliases.swift in Sources */,
 				F50B9B9C1C876E78004D0EF9 /* DataLoadable.swift in Sources */,
+				F50B9BC71C87A831004D0EF9 /* TableViewCellModel.swift in Sources */,
 				F50B9BB71C8791ED004D0EF9 /* GenericModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

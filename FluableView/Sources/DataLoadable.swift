@@ -70,7 +70,7 @@ public protocol DataLoadable {
    If this is applicable, considering that the loading is asynchronous, will try
    to cancel the request.
    */
-  func cancelLoading()
+  func cancelLoading(closure: FVVoidClosure?)
   
   /**
    Does the model has content

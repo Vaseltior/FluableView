@@ -14,7 +14,7 @@ class BaseModelTests: XCTestCase {
   func testBaseModelDataLoadableImplementation() {
     let baseModel = BaseModel()
     XCTAssertFalse(baseModel.isLoading())
-    XCTAssertTrue(baseModel.isLoaded())
+    XCTAssertFalse(baseModel.isLoaded())
     XCTAssertFalse(baseModel.isOutdated())
     XCTAssertTrue(baseModel.shouldLoad())
     XCTAssertFalse(baseModel.hasContent())
