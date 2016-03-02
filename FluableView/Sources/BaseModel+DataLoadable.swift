@@ -23,8 +23,7 @@
 //
 
 //
-//  Loadable.swift
-//  FluableView
+//  FluableView : BaseModel+DataLoadable.swift
 //
 //  Created by Samuel Grau on 02/03/2016.
 //  Copyright © 2016 Samuel GRAU. All rights reserved.
@@ -32,22 +31,22 @@
 
 import Foundation
 
-/**
- - author: Samuel GRAU, 16-03-02 19:03:54
- A protocol that offers a way to ask the model about its state
- */
-public protocol DataLoadable {
+extension BaseModel: DataLoadable {
   /**
    Tells if the object is loading
    - returns: `true` if the model is loading, whatever is loading method is, otherwise returns `false`.
    */
-  func isLoading() -> Bool
+  public func isLoading() -> Bool {
+    return false
+  }
   
   /**
    Tells if the object is loaded
    - returns: `true` if the model is loading, whatever is loading method is, otherwise returns `false`.
    */
-  func isLoaded() -> Bool
+  public func isLoaded() -> Bool {
+    return true
+  }
   
   /**
    Indicates that the model is out of date and should be reloaded as soon as possible.
@@ -55,7 +54,9 @@ public protocol DataLoadable {
    
    - returns: `true` if the model is out of date, otherwise returns `false`.
    */
-  func isOutdated() -> Bool
+  public func isOutdated() -> Bool {
+    return false
+  }
   
   /**
    Should the data be reloaded
@@ -64,13 +65,16 @@ public protocol DataLoadable {
    
    - returns: `true` if the model needs to be reloaded, otherwise returns `false`.
    */
-  func shouldLoad() -> Bool
+  public func shouldLoad() -> Bool {
+    return true
+  }
   
   /**
    If this is applicable, considering that the loading is asynchronous, will try
    to cancel the request.
    */
-  func cancelLoading()
+  public func cancelLoading() {
+  }
   
   /**
    Does the model has content
@@ -78,5 +82,7 @@ public protocol DataLoadable {
    
    - returns: `true` if the model is considered as having content, otherwise returns `false`.
    */
-  func hasContent() -> Bool
+  public func hasContent() -> Bool {
+    return false
+  }
 }

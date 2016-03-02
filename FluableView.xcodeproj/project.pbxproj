@@ -11,6 +11,10 @@
 		F50B9B891C876B2E004D0EF9 /* FluableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50B9B7E1C876B2D004D0EF9 /* FluableView.framework */; };
 		F50B9B8E1C876B2E004D0EF9 /* FluableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9B8D1C876B2E004D0EF9 /* FluableViewTests.swift */; };
 		F50B9B9C1C876E78004D0EF9 /* DataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */; };
+		F50B9BB71C8791ED004D0EF9 /* GenericModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BB61C8791ED004D0EF9 /* GenericModel.swift */; };
+		F50B9BB91C8792A6004D0EF9 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BB81C8792A6004D0EF9 /* BaseModel.swift */; };
+		F50B9BBB1C879314004D0EF9 /* BaseModel+DataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BBA1C879314004D0EF9 /* BaseModel+DataLoadable.swift */; };
+		F50B9BBD1C879342004D0EF9 /* BaseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BBC1C879342004D0EF9 /* BaseModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,10 @@
 		F50B9B8D1C876B2E004D0EF9 /* FluableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluableViewTests.swift; sourceTree = "<group>"; };
 		F50B9B8F1C876B2E004D0EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoadable.swift; sourceTree = "<group>"; };
+		F50B9BB61C8791ED004D0EF9 /* GenericModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericModel.swift; sourceTree = "<group>"; };
+		F50B9BB81C8792A6004D0EF9 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		F50B9BBA1C879314004D0EF9 /* BaseModel+DataLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseModel+DataLoadable.swift"; sourceTree = "<group>"; };
+		F50B9BBC1C879342004D0EF9 /* BaseModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 			children = (
 				F50B9B8D1C876B2E004D0EF9 /* FluableViewTests.swift */,
 				F50B9B8F1C876B2E004D0EF9 /* Info.plist */,
+				F50B9BBC1C879342004D0EF9 /* BaseModelTests.swift */,
 			);
 			path = FluableViewTests;
 			sourceTree = "<group>";
@@ -93,6 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */,
+				F50B9BB61C8791ED004D0EF9 /* GenericModel.swift */,
+				F50B9BB81C8792A6004D0EF9 /* BaseModel.swift */,
+				F50B9BBA1C879314004D0EF9 /* BaseModel+DataLoadable.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -223,7 +235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50B9BBB1C879314004D0EF9 /* BaseModel+DataLoadable.swift in Sources */,
+				F50B9BB91C8792A6004D0EF9 /* BaseModel.swift in Sources */,
 				F50B9B9C1C876E78004D0EF9 /* DataLoadable.swift in Sources */,
+				F50B9BB71C8791ED004D0EF9 /* GenericModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50B9BBD1C879342004D0EF9 /* BaseModelTests.swift in Sources */,
 				F50B9B8E1C876B2E004D0EF9 /* FluableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
