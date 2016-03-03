@@ -34,8 +34,7 @@ import UIKit
 
 // MARK: - UITableViewDelegate
 
-extension FetchedDataSource: UITableViewDelegate {
-  
+extension FetchedDataSource {
   /**
    Asks the delegate for the height to use for a row in a specified location.
    A nonnegative floating-point value that specifies the height (in points) that `row` should be.
@@ -45,31 +44,17 @@ extension FetchedDataSource: UITableViewDelegate {
    
    - returns: A nonnegative floating-point value that specifies the height (in points) that row should be.
    */
-  public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+  public override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     var height = tableView.rowHeight
-    /*
-    if let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as? SFTableCellObject {
-    let aClass = object.tableCellClass(indexPath)
-    let fH = aClass.sfHeight(object, indexPath:indexPath, tableView:tableView)
-    height = fH
     
-    }*/
+    if let object = self.dataModel.fetchedResultsController.objectAtIndexPath(indexPath) as? TableCellObject {
+      let aClass = object.tableCellClass(indexPath)
+      let fH = aClass.sfHeight(object, indexPath:indexPath, tableView:tableView)
+      height = fH
+      
+    }
     
     return height
   }
-  
-  /**
-   Tells the delegate that the specified row is now selected.
-   The delegate handles selections in this method. One of the things it can do is exclusively 
-   assign the check-mark image (UITableViewCellAccessoryCheckmark) to one row in a section (radio-list style).
-   This method isn’t called when the editing property of the table is set to true 
-   (that is, the table view is in editing mode). See "Managing Selections" in Table View Programming Guide 
-   for iOS for further information (and code examples) related to this method.
-   
-   - parameter tableView: A table-view object informing the delegate about the new row selection.
-   - parameter indexPath: An index path locating the new selected row in `tableView`.
-   */
-  public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //tableView.deselectRowAtIndexPath(indexPath, animated: true)
-  }
+
 }

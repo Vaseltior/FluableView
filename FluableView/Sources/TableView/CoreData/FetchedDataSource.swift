@@ -33,5 +33,11 @@ import Foundation
 import CoreData
 
 public class FetchedDataSource: DataSource {
-  
+  public override lazy var dataModel: Model = {
+    return FetchedModel()
+  }()
+
+  public override init() {
+    super.init()
+  }
 }
