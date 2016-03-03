@@ -23,41 +23,19 @@
 //
 
 //
-//  FluableView : BaseModel.swift
+//  FluableView : Debug.swift
 //
-//  Created by Samuel Grau on 02/03/2016.
+//  Created by Samuel Grau on 03/03/2016.
 //  Copyright © 2016 Samuel GRAU. All rights reserved.
 //
 
 import Foundation
 
-/// A base model implementation
-public class BaseModel: Modelizable {
-  
-  /// A set of flags that can maintain information about different states
-  public struct StateFlags {
-    var isLoading: Bool
-    var isLoaded: Bool
-    var hasContent: Bool
-    var hasNoMore: Bool
-    var isCancelled: Bool
-  }
-  
-  // MARK: - Properties -
-  
-  /// The state flags of the base model
-  public var stateFlags: BaseModel.StateFlags = BaseModel.StateFlags(
-    isLoading: false,
-    isLoaded: false,
-    hasContent: false,
-    hasNoMore: false,
-    isCancelled: false
-  )
-  
-  /// Maintains information about the last error occured in the model, if any
-  public private(set) var lastError: FVError? = nil
-  
-  public private(set) var lastUpdate: FVDate? = nil
-  
-  // MARK: - Initialization -
-}
+@available(iOS, deprecated=1.0, message="I'm not deprecated, please ***FIXME**")
+func FIXME() {}
+@available(iOS, deprecated=1.0, message="I'm not deprecated, please ***CHECK MY CODE**")
+func CHECKME() {}
+@available(iOS, deprecated=1.0, message="I'm not deprecated, ***I need an implementation***")
+func IMPLEMENTME() {}
+@available(iOS, deprecated=1.0, message="I'm not deprecated, ***I need a fucking surgery... I'm so ugly***")
+func IMPROVE_THAT_UGLY_CODE() {}

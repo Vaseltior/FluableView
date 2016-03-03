@@ -23,17 +23,14 @@
 //
 
 //
-//  FluableView : TableViewCellModel.swift
+//  FluableView : BaseOfNSObjectDataSource.swift
 //
 //  Created by Samuel Grau on 03/03/2016.
 //  Copyright © 2016 Samuel GRAU. All rights reserved.
 //
 
 import Foundation
-import UIKit
 
-public protocol TableCellObject {
-  func tableCellClass() -> UITableViewCell.Type
-  func cellStyle() -> UITableViewCellStyle
-  func shouldAppendClassNameToReuseIdentifier() -> Bool
+/// 
+public class DataSource: NSObject {
 }

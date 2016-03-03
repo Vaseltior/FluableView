@@ -31,7 +31,7 @@
 
 import Foundation
 
-extension BaseModel: DataLoadable {
+extension Model: DataLoadable {
   /**
    Tells if the object is loading
    - returns: `true` if the model is loading, whatever is loading method is, otherwise returns `false`.

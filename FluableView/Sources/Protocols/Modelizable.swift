@@ -23,9 +23,9 @@
 //
 
 //
-//  FluableView : GenericModel.swift
+//  FluableView : Modelizable.swift
 //
-//  Created by Samuel Grau on 02/03/2016.
+//  Created by Samuel Grau on 03/03/2016.
 //  Copyright © 2016 Samuel GRAU. All rights reserved.
 //
 
@@ -33,9 +33,4 @@ import Foundation
 
 public protocol Modelizable {
   
-}
-
-public protocol DataSourcable {
-  /// The data model associated to this data source
-  var dataModel: Modelizable {get set}
 }

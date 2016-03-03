@@ -32,13 +32,13 @@
 import Foundation
 
 /**
-- author: Samuel GRAU, 16-03-02 22:03:47
-
-The protocol for a cell that could be updated.
-
-Cells that implement this protocol are given the object that implemented the AVNICellObject
-protocol and returned this cell's class name in @link AVNICellObject::cellClass cellClass@endlink.
-*/
+ - author: Samuel GRAU, 16-03-02 22:03:47
+ 
+ The protocol for a cell that could be updated.
+ 
+ Cells that implement this protocol are given the object that implemented the AVNICellObject
+ protocol and returned this cell's class name in @link AVNICellObject::cellClass cellClass@endlink.
+ */
 public protocol UpdatableTableViewCell {
   /**
    Called when a cell is created and reused.
@@ -48,7 +48,17 @@ public protocol UpdatableTableViewCell {
    
    - returns: `true` if the update is needed, otherwise returns `false`
    */
-  func shouldUpdateCellWithObject(object: TableViewCellModel) -> Bool
+  func shouldUpdateCellWithObject(object: TableCellObject) -> Bool
+  
+  /**
+   Called when a cell is created and reused.
+   Implement this method to customize the cell's properties for display using the given object.
+   
+   - parameter object: the object model used to update the viez
+   
+   - returns: `true` if the update is needed, otherwise returns `false`
+   */
+  func updateCellWithObject(object: TableCellObject)
   
   ///
   /// Asks the receiver whether the mapped object class should be appended to the reuse identifier
@@ -68,6 +78,6 @@ public protocol UpdatableTableViewCell {
    
    - returns: the height in points
    */
-  static func heightForObject(object: TableViewCellModel, atIndexPath indexPath: NSIndexPath, tableView: UITableView) -> CGFloat
+  static func heightForObject(object: TableCellObject, atIndexPath indexPath: NSIndexPath, tableView: UITableView) -> CGFloat
   
 }

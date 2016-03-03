@@ -12,7 +12,7 @@ import XCTest
 class BaseModelTests: XCTestCase {
   
   func testBaseModelDataLoadableImplementation() {
-    let baseModel = BaseModel()
+    let baseModel = Model()
     XCTAssertFalse(baseModel.isLoading())
     XCTAssertFalse(baseModel.isLoaded())
     XCTAssertFalse(baseModel.isOutdated())

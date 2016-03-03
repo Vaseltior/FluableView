@@ -10,14 +10,22 @@
 		F50B9B821C876B2D004D0EF9 /* FluableView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50B9B811C876B2D004D0EF9 /* FluableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F50B9B891C876B2E004D0EF9 /* FluableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50B9B7E1C876B2D004D0EF9 /* FluableView.framework */; };
 		F50B9B8E1C876B2E004D0EF9 /* FluableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9B8D1C876B2E004D0EF9 /* FluableViewTests.swift */; };
-		F50B9B9C1C876E78004D0EF9 /* DataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */; };
-		F50B9BB71C8791ED004D0EF9 /* GenericModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BB61C8791ED004D0EF9 /* GenericModel.swift */; };
-		F50B9BB91C8792A6004D0EF9 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BB81C8792A6004D0EF9 /* BaseModel.swift */; };
-		F50B9BBB1C879314004D0EF9 /* BaseModel+DataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BBA1C879314004D0EF9 /* BaseModel+DataLoadable.swift */; };
+		F50B9BBB1C879314004D0EF9 /* Model+DataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BBA1C879314004D0EF9 /* Model+DataLoadable.swift */; };
 		F50B9BBD1C879342004D0EF9 /* BaseModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BBC1C879342004D0EF9 /* BaseModelTests.swift */; };
 		F50B9BC11C879C11004D0EF9 /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BC01C879C11004D0EF9 /* Aliases.swift */; };
 		F50B9BC71C87A831004D0EF9 /* TableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BC61C87A831004D0EF9 /* TableViewCellModel.swift */; };
 		F50B9BC91C87A85E004D0EF9 /* UpdatableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BC81C87A85E004D0EF9 /* UpdatableTableViewCell.swift */; };
+		F50B9BCB1C87A964004D0EF9 /* FetchedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BCA1C87A964004D0EF9 /* FetchedDataSource.swift */; };
+		F50B9BCF1C87A9F0004D0EF9 /* FetchedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BCE1C87A9F0004D0EF9 /* FetchedModel.swift */; };
+		F50B9BD11C87AADA004D0EF9 /* FetchedModel+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BD01C87AADA004D0EF9 /* FetchedModel+UITableViewDataSource.swift */; };
+		F50B9BD31C87AB3C004D0EF9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BD21C87AB3C004D0EF9 /* Model.swift */; };
+		F50B9BD61C87AB77004D0EF9 /* DataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BD51C87AB77004D0EF9 /* DataLoadable.swift */; };
+		F50B9BD81C87AB86004D0EF9 /* Modelizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BD71C87AB86004D0EF9 /* Modelizable.swift */; };
+		F50B9BDA1C87ABA2004D0EF9 /* DataSourcable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BD91C87ABA2004D0EF9 /* DataSourcable.swift */; };
+		F50B9BDC1C87AF5E004D0EF9 /* FetchedModel+NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BDB1C87AF5E004D0EF9 /* FetchedModel+NSFetchedResultsControllerDelegate.swift */; };
+		F50B9BDE1C87B203004D0EF9 /* FetchedDataSource+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BDD1C87B203004D0EF9 /* FetchedDataSource+UITableViewDelegate.swift */; };
+		F50B9BE01C87B259004D0EF9 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BDF1C87B259004D0EF9 /* DataSource.swift */; };
+		F50B9BE21C87B5CF004D0EF9 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BE11C87B5CF004D0EF9 /* Debug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +45,22 @@
 		F50B9B881C876B2E004D0EF9 /* FluableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50B9B8D1C876B2E004D0EF9 /* FluableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluableViewTests.swift; sourceTree = "<group>"; };
 		F50B9B8F1C876B2E004D0EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoadable.swift; sourceTree = "<group>"; };
-		F50B9BB61C8791ED004D0EF9 /* GenericModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericModel.swift; sourceTree = "<group>"; };
-		F50B9BB81C8792A6004D0EF9 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		F50B9BBA1C879314004D0EF9 /* BaseModel+DataLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseModel+DataLoadable.swift"; sourceTree = "<group>"; };
+		F50B9BBA1C879314004D0EF9 /* Model+DataLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Model+DataLoadable.swift"; sourceTree = "<group>"; };
 		F50B9BBC1C879342004D0EF9 /* BaseModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelTests.swift; sourceTree = "<group>"; };
 		F50B9BC01C879C11004D0EF9 /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
 		F50B9BC61C87A831004D0EF9 /* TableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellModel.swift; sourceTree = "<group>"; };
 		F50B9BC81C87A85E004D0EF9 /* UpdatableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatableTableViewCell.swift; sourceTree = "<group>"; };
+		F50B9BCA1C87A964004D0EF9 /* FetchedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedDataSource.swift; sourceTree = "<group>"; };
+		F50B9BCE1C87A9F0004D0EF9 /* FetchedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedModel.swift; sourceTree = "<group>"; };
+		F50B9BD01C87AADA004D0EF9 /* FetchedModel+UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetchedModel+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		F50B9BD21C87AB3C004D0EF9 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F50B9BD51C87AB77004D0EF9 /* DataLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoadable.swift; sourceTree = "<group>"; };
+		F50B9BD71C87AB86004D0EF9 /* Modelizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modelizable.swift; sourceTree = "<group>"; };
+		F50B9BD91C87ABA2004D0EF9 /* DataSourcable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourcable.swift; sourceTree = "<group>"; };
+		F50B9BDB1C87AF5E004D0EF9 /* FetchedModel+NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetchedModel+NSFetchedResultsControllerDelegate.swift"; sourceTree = "<group>"; };
+		F50B9BDD1C87B203004D0EF9 /* FetchedDataSource+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetchedDataSource+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		F50B9BDF1C87B259004D0EF9 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		F50B9BE11C87B5CF004D0EF9 /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +123,11 @@
 		F50B9B9A1C876E78004D0EF9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F50B9BD41C87AB77004D0EF9 /* Protocols */,
 				F50B9BC21C879DF4004D0EF9 /* TableView */,
 				F50B9BC01C879C11004D0EF9 /* Aliases.swift */,
-				F50B9BB81C8792A6004D0EF9 /* BaseModel.swift */,
-				F50B9BBA1C879314004D0EF9 /* BaseModel+DataLoadable.swift */,
-				F50B9B9B1C876E78004D0EF9 /* DataLoadable.swift */,
-				F50B9BB61C8791ED004D0EF9 /* GenericModel.swift */,
+				F50B9BBA1C879314004D0EF9 /* Model+DataLoadable.swift */,
+				F50B9BE11C87B5CF004D0EF9 /* Debug.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -124,6 +139,8 @@
 				F50B9BC41C879DF4004D0EF9 /* Mutable */,
 				F50B9BC61C87A831004D0EF9 /* TableViewCellModel.swift */,
 				F50B9BC81C87A85E004D0EF9 /* UpdatableTableViewCell.swift */,
+				F50B9BD21C87AB3C004D0EF9 /* Model.swift */,
+				F50B9BDF1C87B259004D0EF9 /* DataSource.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -131,6 +148,11 @@
 		F50B9BC31C879DF4004D0EF9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				F50B9BCA1C87A964004D0EF9 /* FetchedDataSource.swift */,
+				F50B9BDD1C87B203004D0EF9 /* FetchedDataSource+UITableViewDelegate.swift */,
+				F50B9BCE1C87A9F0004D0EF9 /* FetchedModel.swift */,
+				F50B9BDB1C87AF5E004D0EF9 /* FetchedModel+NSFetchedResultsControllerDelegate.swift */,
+				F50B9BD01C87AADA004D0EF9 /* FetchedModel+UITableViewDataSource.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -140,6 +162,16 @@
 			children = (
 			);
 			path = Mutable;
+			sourceTree = "<group>";
+		};
+		F50B9BD41C87AB77004D0EF9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F50B9BD51C87AB77004D0EF9 /* DataLoadable.swift */,
+				F50B9BD91C87ABA2004D0EF9 /* DataSourcable.swift */,
+				F50B9BD71C87AB86004D0EF9 /* Modelizable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,13 +300,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F50B9BBB1C879314004D0EF9 /* BaseModel+DataLoadable.swift in Sources */,
-				F50B9BB91C8792A6004D0EF9 /* BaseModel.swift in Sources */,
+				F50B9BCB1C87A964004D0EF9 /* FetchedDataSource.swift in Sources */,
+				F50B9BBB1C879314004D0EF9 /* Model+DataLoadable.swift in Sources */,
+				F50B9BD11C87AADA004D0EF9 /* FetchedModel+UITableViewDataSource.swift in Sources */,
+				F50B9BD31C87AB3C004D0EF9 /* Model.swift in Sources */,
+				F50B9BD81C87AB86004D0EF9 /* Modelizable.swift in Sources */,
 				F50B9BC91C87A85E004D0EF9 /* UpdatableTableViewCell.swift in Sources */,
+				F50B9BD61C87AB77004D0EF9 /* DataLoadable.swift in Sources */,
+				F50B9BDE1C87B203004D0EF9 /* FetchedDataSource+UITableViewDelegate.swift in Sources */,
+				F50B9BCF1C87A9F0004D0EF9 /* FetchedModel.swift in Sources */,
 				F50B9BC11C879C11004D0EF9 /* Aliases.swift in Sources */,
-				F50B9B9C1C876E78004D0EF9 /* DataLoadable.swift in Sources */,
+				F50B9BE01C87B259004D0EF9 /* DataSource.swift in Sources */,
 				F50B9BC71C87A831004D0EF9 /* TableViewCellModel.swift in Sources */,
-				F50B9BB71C8791ED004D0EF9 /* GenericModel.swift in Sources */,
+				F50B9BDC1C87AF5E004D0EF9 /* FetchedModel+NSFetchedResultsControllerDelegate.swift in Sources */,
+				F50B9BDA1C87ABA2004D0EF9 /* DataSourcable.swift in Sources */,
+				F50B9BE21C87B5CF004D0EF9 /* Debug.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
