@@ -44,29 +44,31 @@ public protocol UpdatableTableViewCell {
    Called when a cell is created and reused.
    Implement this method to customize the cell's properties for display using the given object.
    
-   - parameter object: the object model used to update the viez
+   - parameter object: the object model used to update the view
+   - parameter indexPath: the location of that cell in the tableview
    
    - returns: `true` if the update is needed, otherwise returns `false`
    */
-  func shouldUpdateCellWithObject(object: TableCellObject) -> Bool
+  func shouldUpdateCellWithObject(object: TableCellObject, indexPath: NSIndexPath) -> Bool
   
   /**
    Called when a cell is created and reused.
    Implement this method to customize the cell's properties for display using the given object.
    
    - parameter object: the object model used to update the viez
+   - parameter indexPath: the location of that cell in the tableview
    
    - returns: `true` if the update is needed, otherwise returns `false`
    */
-  func updateCellWithObject(object: TableCellObject)
+  func updateCellWithObject(object: TableCellObject, indexPath: NSIndexPath)
   
-  ///
-  /// Asks the receiver whether the mapped object class should be appended to the reuse identifier
-  /// in order to create a unique cell.object identifier key.
-  ///
-  /// This is useful when you have a cell that is intended to be used by a variety of different
-  /// objects.
-  ///
+  /**
+   Asks the receiver whether the mapped object class should be appended to the reuse identifier
+   in order to create a unique cell.object identifier key.
+   This is useful when you have a cell that is intended to be used by a variety of different objects.
+   
+   - returns: `true` if the reuse identifier should be appended by the class name, otherwise returns `false`.
+   */
   static func shouldAppendObjectClassToReuseIdentifier() -> Bool
   
   /**
