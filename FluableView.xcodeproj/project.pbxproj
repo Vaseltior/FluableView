@@ -28,6 +28,7 @@
 		F50B9BE41C88DA62004D0EF9 /* Model+DataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BE31C88DA62004D0EF9 /* Model+DataLoadable.swift */; };
 		F50B9BE61C88E2DE004D0EF9 /* TableCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BE51C88E2DE004D0EF9 /* TableCellFactory.swift */; };
 		F50B9BE91C88E3F4004D0EF9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BE81C88E3F4004D0EF9 /* TableViewCell.swift */; };
+		F50B9BEC1C88FDB3004D0EF9 /* FluableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B9BEB1C88FDB3004D0EF9 /* FluableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		F50B9BE51C88E2DE004D0EF9 /* TableCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellFactory.swift; sourceTree = "<group>"; };
 		F50B9BE81C88E3F4004D0EF9 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F50B9BEA1C88F8F8004D0EF9 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		F50B9BEB1C88FDB3004D0EF9 /* FluableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				F50B9BC61C87A831004D0EF9 /* TableViewCellModel.swift */,
 				F50B9BC81C87A85E004D0EF9 /* UpdatableTableViewCell.swift */,
 				F50B9BE51C88E2DE004D0EF9 /* TableCellFactory.swift */,
+				F50B9BEB1C88FDB3004D0EF9 /* FluableView.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50B9BEC1C88FDB3004D0EF9 /* FluableView.swift in Sources */,
 				F50B9BCB1C87A964004D0EF9 /* FetchedDataSource.swift in Sources */,
 				F50B9BE61C88E2DE004D0EF9 /* TableCellFactory.swift in Sources */,
 				F50B9BD11C87AADA004D0EF9 /* FetchedModel+UITableViewDataSource.swift in Sources */,
