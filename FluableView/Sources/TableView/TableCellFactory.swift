@@ -55,32 +55,36 @@ public protocol TableViewModelDelegate {
 
 enum TableCellFactoryError: ErrorType {
   case InvalidTableViewCellConformance(message: String)
+  case UnregisteredTableView(message: String)
 }
 
 public class TableCellFactory {
+  
+  // MARK: - Initialization -
+  
   public static let sharedInstance = TableCellFactory()
   private init() {}
   
-  var tableViewClassRegistrations: [NSObject: Set<String>] = [NSObject: Set<String>]()
+  // MARK: - Dequeuing -
   
   /**
-   Creates a cell from a given object if and only if the object conforms to the AVNICellObject
-   protocol.
-   
-   This method signature matches the AVNITableViewModelDelegate method so that you can
-   set this factory as the model's delegate:
-   
-   If you would like to customize the factory's output, implement the model's delegate method
-   and call the factory method. Remember that if the factory doesn't know how to map
-   the object to a cell it will return nil.
-   
-   - parameter tableViewModel: tableViewModel object
-   - parameter tableView:      tableview
-   - parameter indexPath:      location of the wanted cell in the table view
-   - parameter object:         the object that will tell which cell type to use
-   
-   - returns: A table view cell object
-   */
+  Creates a cell from a given object if and only if the object conforms to the AVNICellObject
+  protocol.
+  
+  This method signature matches the AVNITableViewModelDelegate method so that you can
+  set this factory as the model's delegate:
+  
+  If you would like to customize the factory's output, implement the model's delegate method
+  and call the factory method. Remember that if the factory doesn't know how to map
+  the object to a cell it will return nil.
+  
+  - parameter tableViewModel: tableViewModel object
+  - parameter tableView:      tableview
+  - parameter indexPath:      location of the wanted cell in the table view
+  - parameter object:         the object that will tell which cell type to use
+  
+  - returns: A table view cell object
+  */
   public func tableViewModel(
     tableViewModel: Model,
     cellForTableView tableView: UITableView,
@@ -129,4 +133,46 @@ public class TableCellFactory {
       
       return cell
   }
+  
+  // MARK: - Registering/Unregistering -
+  
+  // MARK: Properties
+  
+  typealias ClassSet = Set<String>
+  typealias ClassRegistrationDictionary = [UITableView: ClassSet]
+  
+  var observedTableViews: Set<UITableView> = Set<UITableView>()
+  var classRegistrations: ClassRegistrationDictionary = ClassRegistrationDictionary()
+  
+  // MARK: Functions
+  
+  /**
+  Register the table view and prepare the registered classes storage
+  
+  - parameter tableView: the tableview to register
+  */
+  public func registerTableView(tableView: UITableView) {
+    // If it already exist, we have nothing to do here, we just return
+    if self.observedTableViews.contains(tableView) {
+      return
+    }
+    
+    // Add the given table view to the set of observed table views
+    self.observedTableViews.insert(tableView)
+    // And initiate the set of classes
+    self.classRegistrations[tableView] = ClassSet()
+  }
+  
+  /**
+   Unregister the table view and the registered classes associated to that table view
+   
+   - parameter tableView: the tableview to unregister
+   */
+  public func unregisterTableView(tableView: UITableView) {
+    // Remove the value for the given tableview
+    self.classRegistrations.removeValueForKey(tableView)
+    // Remove the tableview from the set of observed table views
+    self.observedTableViews.remove(tableView)
+  }
+  
 }
