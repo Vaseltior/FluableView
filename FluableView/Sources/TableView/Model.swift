@@ -34,6 +34,10 @@ import UIKit
 
 public class Model: NSObject, Modelizable {
   
+  public required override init() {
+    super.init()
+  }
+  
   /// A set of flags that can maintain information about different states
   public struct StateFlags {
     var isLoading: Bool

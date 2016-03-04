@@ -33,7 +33,7 @@ import Foundation
 import UIKit
 
 public protocol TableCellObject {
-  func tableCellClass() -> UITableViewCell.Type
+  func tableCellClass(indexPath: NSIndexPath) -> UITableViewCell.Type
   func cellStyle() -> UITableViewCellStyle
   func shouldAppendClassNameToReuseIdentifier() -> Bool
 }

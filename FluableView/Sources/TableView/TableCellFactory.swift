@@ -83,6 +83,9 @@ public class TableCellFactory {
   - parameter indexPath:      location of the wanted cell in the table view
   - parameter object:         the object that will tell which cell type to use
   
+  - throws: this method can throw error when the table view is not yet registered or if the involved
+  table view cells are not `TableViewCell`
+  
   - returns: A table view cell object
   */
   public func tableViewModel(
@@ -92,7 +95,7 @@ public class TableCellFactory {
     withObject object: TableCellObject) throws -> TableViewCell {
       
       // Only AVNICellObject-conformant objects may pass.
-      let cellClass: UITableViewCell.Type = object.tableCellClass()
+      let cellClass: UITableViewCell.Type = object.tableCellClass(indexPath)
       return try self.cellWithClass(cellClass, tableView: tableView, object: object, indexPath: indexPath)
   }
   

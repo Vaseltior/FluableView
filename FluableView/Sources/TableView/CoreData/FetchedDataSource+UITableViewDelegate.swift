@@ -36,25 +36,26 @@ import UIKit
 
 extension FetchedDataSource {
   /**
-   Asks the delegate for the height to use for a row in a specified location.
-   A nonnegative floating-point value that specifies the height (in points) that `row` should be.
-   
-   - parameter tableView: The table-view object requesting this information.
-   - parameter indexPath: An index path that locates a row in `tableView`.
-   
-   - returns: A nonnegative floating-point value that specifies the height (in points) that row should be.
-   */
-  public override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    var height = tableView.rowHeight
-    
-    if let object = self.dataModel.fetchedResultsController.objectAtIndexPath(indexPath) as? TableCellObject {
-      let aClass = object.tableCellClass(indexPath)
-      let fH = aClass.sfHeight(object, indexPath:indexPath, tableView:tableView)
-      height = fH
-      
-    }
-    
-    return height
+  Asks the delegate for the height to use for a row in a specified location.
+  A nonnegative floating-point value that specifies the height (in points) that `row` should be.
+  
+  - parameter tableView: The table-view object requesting this information.
+  - parameter indexPath: An index path that locates a row in `tableView`.
+  
+  - returns: A nonnegative floating-point value that specifies the height (in points) that row should be.
+  */
+  /*public override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+  var height = tableView.rowHeight
+  
+  if let object = self.dataModel.fetchedResultsController.objectAtIndexPath(indexPath) as? TableCellObject {
+  guard let aClass = object.tableCellClass(indexPath) as? TableViewCell.Type else {
+  return height
   }
-
+  
+  height = aClass.heightForObject(object, atIndexPath: indexPath, tableView: tableView)
+  }
+  
+  return height
+  }*/
+  
 }
