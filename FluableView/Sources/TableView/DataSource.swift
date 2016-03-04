@@ -34,13 +34,6 @@ import UIKit
 
 /// 
 public class DataSource: NSObject {
-  public lazy var dataModel: Model = {
-    return Model()
-  }()
-  
-  public override init() {
-    super.init()
-  }
 }
 
 extension DataSource: UITableViewDelegate {
@@ -54,7 +47,7 @@ extension DataSource: UITableViewDelegate {
    - returns: A nonnegative floating-point value that specifies the height (in points) that row should be.
    */
   public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    var height = tableView.rowHeight
+    let height = tableView.rowHeight
     /*
     if let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as? SFTableCellObject {
     let aClass = object.tableCellClass(indexPath)
@@ -91,6 +84,9 @@ extension DataSource: TableViewModelDelegate {
    - parameter tableView:      the table view
    - parameter indexPath:      the location of the cell in the tableview
    - parameter object:         the object
+   
+   - throws: this method can throw error when the table view is not yet registered or if the involved
+   table view cells are not `TableViewCell`
    
    - returns: A table view cell object
    */

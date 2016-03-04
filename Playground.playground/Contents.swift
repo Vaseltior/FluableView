@@ -5,12 +5,31 @@ import XCPlayground
 import FluableView
 
 extension NSIndexPath {
-  public override var description: String { return "section \(self.section) item \(self.item)" }
+  public override var description: String {
+    return "section \(self.section) item \(self.item)"
+  }
 }
 
-
-let tableView = UITableView(frame: CGRectMake(0, 0, 320, 480), style: .Grouped)
-tableView.registerClass(TableViewCell.self, forCellReuseIdentifier: String(TableViewCell))
+let tableView = FluableView(
+  frame: CGRect(x: 0, y: 0, width: 320, height: 480),
+  style: .Grouped
+)
+tableView.registerClass(
+  TableViewCell.self,
+  forCellReuseIdentifier: String(TableViewCell)
+)
+tableView.registerClass(
+  TableViewCell.self,
+  forCellReuseIdentifier: String(TableViewCell)
+)
+tableView.registerClass(
+  TableViewCell.self,
+  forCellReuseIdentifier: String(TableViewCell)
+)
+tableView.registerClass(
+  TableViewCell.self,
+  forCellReuseIdentifier: String(TableViewCell)
+)
 /*
 var model: TableModel<String> = []
 

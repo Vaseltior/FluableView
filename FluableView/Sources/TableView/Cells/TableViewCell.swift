@@ -57,7 +57,6 @@ extension TableViewCell: UpdatableTableViewCell {
    - parameter object: the object model used to update the viez
    - parameter indexPath: the location of that cell in the tableview
    
-   - returns: `true` if the update is needed, otherwise returns `false`
    */
   public func updateCellWithObject(object: TableCellObject, indexPath: NSIndexPath) {
     

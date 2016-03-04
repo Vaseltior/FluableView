@@ -23,49 +23,40 @@
 //
 
 //
-//  FluableView : NSObjectModel.swift
+//  FluableView : FluableView.swift
 //
-//  Created by Samuel Grau on 03/03/2016.
+//  Created by Samuel Grau on 04/03/2016.
 //  Copyright © 2016 Samuel GRAU. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-public class Model: NSObject, Modelizable {
+public class FluableView: UITableView {
   
-  public required override init() {
-    super.init()
+  public override init(frame: CGRect, style: UITableViewStyle) {
+    super.init(frame: frame, style: style)
+    self.registerToTheCellFactory()
   }
   
-  /// A set of flags that can maintain information about different states
-  public struct StateFlags {
-    var isLoading: Bool
-    var isLoaded: Bool
-    var hasContent: Bool
-    var hasNoMore: Bool
-    var isCancelled: Bool
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    self.registerToTheCellFactory()
   }
   
-  // MARK: - Properties -
+  deinit {
+    self.unregisterFromTheCellFactory()
+  }
   
-  /// The state flags of the base model
-  public var stateFlags: Model.StateFlags = Model.StateFlags(
-    isLoading: false,
-    isLoaded: false,
-    hasContent: false,
-    hasNoMore: false,
-    isCancelled: false
-  )
+  // MARK: - Private
   
-  /// Maintains information about the last error occured in the model, if any
-  public private(set) var lastError: FVError? = nil
+  private func registerToTheCellFactory() {
+    let tvcf = TableCellFactory.sharedInstance
+    tvcf.registerTableView(self)
+  }
   
-  /// Maintains information about the last update date of the model
-  public private(set) var lastUpdate: FVDate? = nil
-  
-  /// A weak pointer to the table view involved
-  public weak var tableView: UITableView? = nil
-  
-  // MARK: - Initialization -
+  private func unregisterFromTheCellFactory() {
+    let tvcf = TableCellFactory.sharedInstance
+    tvcf.unregisterTableView(self)
+  }
 }
