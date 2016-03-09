@@ -61,4 +61,14 @@ public class FetchedModel: Model {
     }
   }
   
+  /**
+   Returns the object at the wanted indexPath
+   
+   - parameter indexPath: the index path used to look up the object
+   
+   - returns: the object at the given index path
+   */
+  public func objectAtIndexPath(indexPath: NSIndexPath) -> AnyObject {
+    return self.fetchedResultsController.objectAtIndexPath(indexPath)
+  }
 }

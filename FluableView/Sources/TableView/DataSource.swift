@@ -34,6 +34,9 @@ import UIKit
 
 /// 
 public class DataSource: NSObject {
+  /// A weak reference to a controller object... This need not to be a UIViewController
+  public weak var controllerDelegate: AnyObject? = nil
+  
   public override init() {
     super.init()
   }
