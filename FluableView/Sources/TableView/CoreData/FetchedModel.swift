@@ -30,9 +30,9 @@ public class FetchedModel: Model {
   
   // MARK: Private
   
-  private func performFetch() throws {
+  public func performFetch() throws {
     // Perform Fetch
-    // NSFetchedResultsController.deleteCacheWithName(nil)
+    //NSFetchedResultsController.deleteCacheWithName(nil)
     try self.fetchedResultsController.performFetch()
   }
   
