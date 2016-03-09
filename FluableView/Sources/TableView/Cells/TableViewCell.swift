@@ -32,11 +32,21 @@
 import Foundation
 import UIKit
 
-public class TableViewCell: UITableViewCell {
+public class TableViewCell: UITableViewCell, UpdatableTableViewCell {
   
-}
-
-extension TableViewCell: UpdatableTableViewCell {
+  public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+    self.commonInitialization()
+  }
+  
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    self.commonInitialization()
+  }
+  
+  public func commonInitialization() {
+  }
+  
   /**
    Called when a cell is created and reused.
    Implement this method to customize the cell's properties for display using the given object.

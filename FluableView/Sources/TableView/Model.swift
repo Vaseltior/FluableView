@@ -33,9 +33,14 @@ import Foundation
 import UIKit
 
 public class Model: NSObject, Modelizable {
+  public var delegate: TableViewModelDelegate? = nil
   
   public required override init() {
     super.init()
+  }
+  
+  deinit {
+    self.delegate = nil
   }
   
   /// A set of flags that can maintain information about different states
@@ -59,7 +64,7 @@ public class Model: NSObject, Modelizable {
   )
   
   /// Maintains information about the last error occured in the model, if any
-  public private(set) var lastError: FVError? = nil
+  public internal(set) var lastError: FVError? = nil
   
   /// Maintains information about the last update date of the model
   public private(set) var lastUpdate: FVDate? = nil
@@ -68,4 +73,42 @@ public class Model: NSObject, Modelizable {
   public weak var tableView: UITableView? = nil
   
   // MARK: - Initialization -
+  
+  // MARK: - Compilation -
+  
+  public func compileData() {
+  }
+  
+  public func compileDataModel() throws {
+    self.compileData()
+  }
+  
+  public func compileDataModelWitCompletion(closure: FVVoidClosure?) {
+    if self.isLoading() {
+      //self.cancelRequest()
+    }
+    
+    self.stateFlags.hasContent = false
+    self.stateFlags.isLoaded = false
+    self.stateFlags.isLoading = true
+    
+    do {
+      try self.compileDataModel()
+      
+      self.lastUpdate = NSDate()
+      self.lastError = nil
+      self.stateFlags.isLoaded = true
+      self.stateFlags.isLoading = false
+      //self.stateFlags.hasContent = self.numberOfResults() != 0
+      
+    } catch let error {
+      self.stateFlags.hasContent = false
+      self.stateFlags.isLoaded = true
+      self.stateFlags.isLoading = false
+      self.lastError = error
+      
+    }
+    
+    closure?()
+  }
 }

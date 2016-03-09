@@ -73,20 +73,13 @@ extension FetchedModel: UITableViewDataSource {
    An assertion is raised if you return `nil`.
    */
   public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    //Swell.debug { "Table view asking cell for row at " + indexPath.description }
-    
     var cell: UITableViewCell? = nil
     if let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as? TableCellObject {
-      IMPLEMENTME()
-      /*cell = self.cell(
-      object.tableCellClass(indexPath),
-      tableView: tableView,
-      indexPath: indexPath,
-      object: object
-      )*/
-      
-      if nil == cell {
-        fatalError("Could not create the table view cell")
+      do {
+        cell = try self.delegate?.tableViewModel(self, cellForTableView:tableView, atIndexPath:indexPath, withObject:object)
+      } catch let error {
+        
+        fatalError("Could not create the table view cell: \(error)")
       }
     }
     

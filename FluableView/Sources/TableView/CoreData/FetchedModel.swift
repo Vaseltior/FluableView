@@ -37,14 +37,28 @@ public class FetchedModel: Model {
   // MARK: Properties
   
   /// The fetched result controller in charge of handling data fetch from CoreData
-  var fetchedResultsController: NSFetchedResultsController! = nil
+  public var fetchedResultsController: NSFetchedResultsController! = nil
   
   // MARK: Private
   
   private func performFetch() throws {
     // Perform Fetch
-    NSFetchedResultsController.deleteCacheWithName(nil)
-    precondition(self.fetchedResultsController != nil, "property fetchedResultsController Should not be nil")
+    // NSFetchedResultsController.deleteCacheWithName(nil)
     try self.fetchedResultsController.performFetch()
   }
+  
+  // MARK: - Compilation -
+  
+  /**
+  Compiles the data of the fetched result controller
+  */
+  public override func compileData() {
+    do {
+      try self.performFetch()
+      
+    } catch let error {
+      self.lastError = error
+    }
+  }
+  
 }

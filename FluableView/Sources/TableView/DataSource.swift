@@ -34,6 +34,10 @@ import UIKit
 
 /// 
 public class DataSource: NSObject {
+  public override init() {
+    super.init()
+  }
+  
 }
 
 extension DataSource: UITableViewDelegate {

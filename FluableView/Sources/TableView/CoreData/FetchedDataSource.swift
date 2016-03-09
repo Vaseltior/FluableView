@@ -34,33 +34,39 @@ import CoreData
 
 public class GenericDataSource<T: Model>: DataSource {
   public internal(set) var dataModel: T
-
-  override init() {
+  
+  public override init() {
     self.dataModel = T()
+    super.init()
+    self.dataModel.delegate = self
   }
 }
 
-public class FetchedDataSource: GenericDataSource<FetchedModel> {
+public class FetchedDataSource<T: FetchedModel>: GenericDataSource<T> {
+  public override init() {
+    super.init()
+  }
+  
   /**
    Asks the delegate for the height to use for a row in a specified location.
    A nonnegative floating-point value that specifies the height (in points) that `row` should be.
-
+   
    - parameter tableView: The table-view object requesting this information.
    - parameter indexPath: An index path that locates a row in `tableView`.
-
+   
    - returns: A nonnegative floating-point value that specifies the height (in points) that row should be.
    */
   public override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     var height = tableView.rowHeight
-
+    
     if let object = self.dataModel.fetchedResultsController.objectAtIndexPath(indexPath) as? TableCellObject {
       guard let aClass = object.tableCellClass(indexPath) as? TableViewCell.Type else {
         return height
       }
-
+      
       height = aClass.heightForObject(object, atIndexPath: indexPath, tableView: tableView)
     }
-
+    
     return height
   }
 }
