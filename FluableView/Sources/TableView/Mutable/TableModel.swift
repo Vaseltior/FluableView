@@ -15,12 +15,21 @@ limitations under the License.
 */
 
 //
-//  FluableView : DataSourcable.swift
+//  FluableView : TableModel.swift
 //
 
 import Foundation
 
-public protocol DataSourcable {
-  /// The data model associated to this data source
-  var dataModel: Modelizable {get set}
+extension TableModel: ModelType {
+  
+  public func append(element: Element, toSection: Array<Section>.Index) -> NSIndexPath {
+    assert(toSection >= 0 && toSection < self._storage.count)
+    self._storage[toSection]._storage.append(element)
+    return NSIndexPath(forRow: self._storage[toSection]._storage.count, inSection: toSection)
+  }
+  
+  public func append(section: Section) -> NSIndexSet {
+    self._storage.append(section)
+    return NSIndexSet(index: self._storage.count)
+  }
 }

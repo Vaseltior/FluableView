@@ -15,12 +15,17 @@ limitations under the License.
 */
 
 //
-//  FluableView : DataSourcable.swift
+//  FluableView : SectionType.swift
 //
 
 import Foundation
 
-public protocol DataSourcable {
-  /// The data model associated to this data source
-  var dataModel: Modelizable {get set}
+/**
+ The base type of sections contained within a ModelType.
+ 
+ Sections consistent of many elements.
+ */
+public protocol SectionType: ArrayLiteralConvertible {
+  typealias Element
+  var elements: [Element] { get }
 }

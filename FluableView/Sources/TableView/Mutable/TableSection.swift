@@ -15,12 +15,20 @@ limitations under the License.
 */
 
 //
-//  FluableView : DataSourcable.swift
+//  FluableView : TableSection.swift
 //
 
 import Foundation
 
-public protocol DataSourcable {
-  /// The data model associated to this data source
-  var dataModel: Modelizable {get set}
+public struct TableSection<Element>: SectionType {
+  public var elements: [Element] {
+    return self.innerStorage
+  }
+  
+  public init(arrayLiteral elements: Element...) {
+    self.innerStorage = elements
+  }
+  
+  // Readwrite storage
+  private var innerStorage: [Element]
 }
